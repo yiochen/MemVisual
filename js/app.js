@@ -1,7 +1,8 @@
 var x = 100;
 var y = 100;
 var box;
-
+var cfree = [0xE6E6E6, 0xF2F2F2];
+var cused = [[0x9FF781, 0xCEF6E3], [0xF78181, 0xF8E0E0]];
 var mems = [1, 2, 1, 3, 4, 2, 5, 0];
 var boxes = new Group();
 var paddle;
@@ -24,6 +25,11 @@ var CONST = {
     speed: -9,
     maxSkew: 30,
 };
+
+function parseText(file) {
+    console.log(file);
+    console.log(typeof (file));
+}
 
 function initBoxes() {
     var x = CONST.initX + CONST.uw / 2;
@@ -70,6 +76,7 @@ function initBall() {
 
 function setup() {
     createCanvas(CONST.maxX, CONST.maxY).parent('canvContainer');
+    httpGet("output.txt", null, "text", parseText);
     initBoxes();
     initPaddle();
     initBall();
