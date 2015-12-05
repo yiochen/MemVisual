@@ -4,6 +4,7 @@
 <head>
     <title>p5 mem visualization</title>
     <link rel="shortcut icon" type="image/png" href="http://yiou.me/common/favicon/favicon.png" />
+    <link rel="stylesheet" href="normalize.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.18/p5.js"></script>
     <script src="js/p5.play.js"></script>
     <script type="application/javascript" src="js/app.js"></script>
@@ -16,6 +17,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             background: black;
             color: white;
         }
@@ -23,13 +25,55 @@
         #canvContainer h2 {
             text-align: center;
         }
+        
+        .icon {
+            height: 30px;
+            width: 30px;
+            display: inline-block;
+        }
+        
+        .c1 {
+            background-color: #E9E9E9;
+        }
+        
+        .c2 {
+            background-color: #9FF781;
+        }
+        
+        .c3 {
+            background-color: #F78181;
+        }
+        
+        .c4 {
+            background-color: white;
+        }
+        
+        .legend {
+            /*            background-color: grey;*/
+        }
+        
+        .legend h3 {
+            display: inline-block;
+        }
     </style>
 </head>
 
 <body>
     <!--    <div id="p5_loading" class="loadingclass">This could be some sweet graphics loading lots of bits.</div>-->
+    <img src="screenshot.jpg">
+    <div class="legend">
+        <h1>Mem Tool</h1>
+        <div class="icon c1"></div>
+        <h3> free block</h3>
+        <div class="icon c2"></div>
+        <div class="icon c3"></div>
+        <h3> allocated block</h3>
+        <div class="icon c4"></div>
+        <h3> internal fragmentation</h3>
+    </div>
     <div id="canvContainer">
-        <h2>Mem Tool</h2>
+
+
     </div>
 </body>
 
